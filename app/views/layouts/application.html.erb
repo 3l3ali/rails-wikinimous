@@ -12,6 +12,13 @@
 
   <body>
     <div class="nav-bar">
+      <div>
+        <% if current_user %>
+          Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+        <% else %>
+          <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+        <% end %>
+      </div>
       <h4><%= link_to "Wikinimous", articles_path %></h4>
       <h5><%= link_to "New Article", new_article_path %></h5>
     </div>
